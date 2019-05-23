@@ -1,5 +1,17 @@
 <resources>
-    <string name="app_name">DoThis</string>
-    <string name="title_activity_lista">Lista</string>
-    <string name="title_activity_cadastro">Cadastro</string>
+<string name="app_name">DoThis</string>
+<string name="bem_vindo">Bem-Vindo</string>
+<string name="title_activity_lista">Lista de Tarefas</string>
+<string name="title_activity_cadastro">Nova Tarefa</string>
+<string name="materia">Matéria</string>
+<string name="tarefa">Tarefa</string>
+<string name="descricao">Descrição</string>
+<string name="entrega">Data de Entrega</string>
+<string name="msg_ok">OK</string>
+<string name="msg_cancelar">Cancelar</string>
+<string name="btn_entrega">Escolher data de entrega</string>
+<string name="aviso">Aviso</string>
+<string name="msg_aviso">Há campos inválidos ou em branco!</string>
+<string name="msg_conexao">Conexao Criada com Sucesso!</string>
+<string name="msg_erro">Erro</string>
 </resources>
