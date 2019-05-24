@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_cadastro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -114,7 +115,9 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="2dp"
-                android:text="@string/btn_entrega" />
+                android:text="@string/btn_entrega"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="396dp" />
 
         </LinearLayout>
     </ScrollView>

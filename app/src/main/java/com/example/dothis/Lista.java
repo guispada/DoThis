@@ -34,7 +34,7 @@ public class Lista extends AppCompatActivity {
 
         lst_tarefas = (RecyclerView) findViewById(R.id.lst_tarefas);
         btn_cadastrar = (FloatingActionButton) findViewById(R.id.btn_cadastrar);
-        layoutTarefas = (ConstraintLayout) findViewById(R.id.layout_tarefas);
+        layoutTarefas = (ConstraintLayout) findViewById(R.id.layoutTarefas);
 
         criarConexao();
     }
@@ -45,7 +45,7 @@ public class Lista extends AppCompatActivity {
 
             dadosTarefas = new DadosTarefas(this);
             conexao = dadosTarefas.getWritableDatabase();
-            Snackbar.make(layoutTarefas, R.string.msg_conexao, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(layoutTarefas, R.string.msg_conexao, Snackbar.LENGTH_SHORT)
                     .setAction(R.string.msg_ok, null).show();
 
         }catch (SQLException ex){

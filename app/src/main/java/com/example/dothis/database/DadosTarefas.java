@@ -10,7 +10,7 @@ public class DadosTarefas extends SQLiteOpenHelper{
 
 
     public DadosTarefas(@Nullable Context context) {
-        super(context, "DadosLista", null, 1);
+        super(context, "TAREFAS", null, 1);
     }
 
     @Override

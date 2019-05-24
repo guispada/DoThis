@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.example.dothis.database.DadosTarefas;
 import com.example.dothis.dominio.entidades.Tarefa;
@@ -33,7 +34,7 @@ public class Cadastro extends AppCompatActivity {
     private EditText edt_materia;
     private EditText edt_tarefa;
     private EditText edt_descricao;
-    private Button btn_entrega;
+    private Button   btn_entrega;
     private DatePickerDialog.OnDateSetListener setDate;
 
     private SQLiteDatabase conexao;
@@ -198,7 +199,7 @@ public class Cadastro extends AppCompatActivity {
             res = true;
         }
 
-        if (res=true) {
+        if (res==true) {
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setTitle(R.string.aviso);
             dlg.setMessage(R.string.msg_aviso);

@@ -11,7 +11,7 @@ public class ScriptDB {
         sql.append("    MATERIA     VARCHAR (100)   NOT NULL DEFAULT (''), ");
         sql.append("    TAREFA      VARCHAR (200)   NOT NULL DEFAULT (''),");
         sql.append("    DESCRICAO   VARCHAR (300)   NOT NULL DEFAULT (''),");
-        sql.append("    ENTREGA    VARCHAR (12)    NOT NULL DEFAULT (''))");
+        sql.append("    ENTREGA     DATE            NOT NULL DEFAULT (''))");
 
         return sql.toString();
 
