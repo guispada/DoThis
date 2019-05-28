@@ -9,11 +9,16 @@ import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.dothis.database.DadosTarefas;
+import com.example.dothis.dominio.entidades.Tarefa;
+import com.example.dothis.dominio.repositorios.TarefaRepositorio;
+
+import java.util.List;
 
 public class Lista extends AppCompatActivity {
 
@@ -24,6 +29,9 @@ public class Lista extends AppCompatActivity {
     private SQLiteDatabase conexao;
 
     private DadosTarefas dadosTarefas;
+
+    private TarefaRepositorio tarefaRepositorio;
+    private TarefaAdapter tarefaAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +45,19 @@ public class Lista extends AppCompatActivity {
         layoutTarefas = (ConstraintLayout) findViewById(R.id.layoutTarefas);
 
         criarConexao();
+
+        lst_tarefas.setHasFixedSize(true);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        lst_tarefas.setLayoutManager(linearLayoutManager);
+
+        tarefaRepositorio = new TarefaRepositorio(conexao);
+
+        List<Tarefa> dados = tarefaRepositorio.buscarTodos();
+
+        tarefaAdapter = new TarefaAdapter(dados);
+
+        lst_tarefas.setAdapter(tarefaAdapter);
     }
 
     private void criarConexao(){
