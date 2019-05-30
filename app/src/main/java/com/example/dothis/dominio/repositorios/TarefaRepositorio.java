@@ -56,7 +56,7 @@ public class TarefaRepositorio {
         List<Tarefa> tarefas = new ArrayList<Tarefa>();
 
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT CODIGO, MATERIA, TAREFA, DESCRICAO, ENTREGA");
+        sql.append("SELECT CODIGO, MATERIA, TAREFA, DESCRICAO, ENTREGA ");
         sql.append("FROM TAREFAS");
 
         Cursor resultado = conexao.rawQuery(sql.toString(), null);
@@ -72,7 +72,7 @@ public class TarefaRepositorio {
                 tar.materia   = resultado.getString(resultado.getColumnIndexOrThrow("MATERIA"));
                 tar.tarefa    = resultado.getString(resultado.getColumnIndexOrThrow("TAREFA"));
                 tar.descricao = resultado.getString(resultado.getColumnIndexOrThrow("DESCRICAO"));
-                tar.entrega  = resultado.getString(resultado.getColumnIndexOrThrow("ENTREGA"));
+                tar.entrega   = resultado.getString(resultado.getColumnIndexOrThrow("ENTREGA"));
 
                 tarefas.add(tar);
 

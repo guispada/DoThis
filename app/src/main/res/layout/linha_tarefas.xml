@@ -8,8 +8,8 @@
         android:id="@+id/txtMateria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -18,8 +18,8 @@
         android:id="@+id/txtData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:text="TextView"
         android:textSize="18sp" />
 </LinearLayout>
