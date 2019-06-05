@@ -90,9 +90,17 @@ public class Lista extends AppCompatActivity {
 
     public void cadastrar(View view){
 
-        Intent it = new Intent(Lista.this, Cadastro.class); //chamando outra activity
-        startActivity(it);
+        Intent it = new Intent(Lista.this, Cadastro.class);
+        startActivityForResult(it, 0);
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        List<Tarefa> dados = tarefaRepositorio.buscarTodos();
+        tarefaAdapter = new TarefaAdapter(dados);
+        lst_tarefas.setAdapter(tarefaAdapter);
+
+    }
 }

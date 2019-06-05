@@ -50,6 +50,7 @@ public class Cadastro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         edt_materia = (EditText) findViewById(R.id.edt_materia);
         edt_tarefa = (EditText) findViewById(R.id.edt_tarefa);
@@ -86,9 +87,25 @@ public class Cadastro extends AppCompatActivity {
         };
 
         criarConexao();
-
+        verificaParametro();
     }
 
+    private void verificaParametro(){
+
+        Bundle bundle = getIntent().getExtras();
+
+        tare = new Tarefa();
+
+        if((bundle != null) && (bundle.containsKey("TAREFA"))){
+
+            tare = (Tarefa)bundle.getSerializable("TAREFA");
+
+            edt_materia.setText(tare.materia);
+            edt_tarefa.setText(tare.tarefa);
+            edt_descricao.setText(tare.descricao);
+            btn_entrega.setText(tare.entrega);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,12 +123,17 @@ public class Cadastro extends AppCompatActivity {
 
         switch (id) {
 
+            case android.R.id.home:
+                finish();
+                break;
+
             case R.id.act_ok:
                 confirmar();
                 break;
 
-            case R.id.act_cancelar:
-                voltar();
+            case R.id.act_excluir:
+                tarefaRepositorio.excluir(tare.codigo);
+                finish();
                 break;
         }
 
@@ -148,13 +170,17 @@ public class Cadastro extends AppCompatActivity {
 
     private void confirmar(){
 
-        tare = new Tarefa();
 
         if(validaCampos() == false){
 
-            try{
+            try {
 
-                tarefaRepositorio.inserir(tare);
+                if (tare.codigo == 0){
+                    tarefaRepositorio.inserir(tare);
+                }
+                else{
+                    tarefaRepositorio.alterar(tare);
+                }
 
                 finish();
 
