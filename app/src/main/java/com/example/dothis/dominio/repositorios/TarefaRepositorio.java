@@ -89,7 +89,7 @@ public class TarefaRepositorio {
 
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT CODIGO, MATERIA, TAREFA, DESCRICAO, ENTREGA");
-        sql.append("FROM TAREFASS");
+        sql.append("FROM TAREFAS");
         sql.append("WHERE CODIGO = ?");
 
         String[] parametros = new String[1];

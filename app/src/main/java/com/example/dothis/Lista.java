@@ -22,8 +22,8 @@ import java.util.List;
 
 public class Lista extends AppCompatActivity {
 
-    private RecyclerView lst_tarefas; //Lista
-    private FloatingActionButton btn_cadastrar; //Botao
+    private RecyclerView lst_tarefas;
+    private FloatingActionButton btn_cadastrar;
     private ConstraintLayout layoutTarefas;
 
     private SQLiteDatabase conexao;

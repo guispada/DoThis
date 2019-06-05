@@ -182,7 +182,7 @@ public class Cadastro extends AppCompatActivity {
         tare.materia   = materia;
         tare.tarefa    = tarefa;
         tare.descricao = descricao;
-        tare.entrega  = entrega;
+        tare.entrega   = entrega;
 
 
         if (isCampoVazio(materia)) {
