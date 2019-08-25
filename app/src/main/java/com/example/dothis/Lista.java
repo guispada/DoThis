@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.dothis.database.DadosTarefas;
@@ -80,6 +83,45 @@ public class Lista extends AppCompatActivity {
         }
     }
 
+    public void cadastrar(View view){
+
+        Intent it = new Intent(Lista.this, Cadastro.class);
+        startActivityForResult(it, 0);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_lista, menu); //criando o menu lista
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        switch (id) {
+
+            case android.R.id.home:
+                finish();
+                break;
+
+            case R.id.aulas:
+                Intent it = new Intent(Lista.this, Aulas.class);
+                startActivityForResult(it, 0);
+
+            case R.id.ajustes:
+                Intent itt = new Intent(Lista.this, Aulas.class);
+                startActivityForResult(itt, 0);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     /*@Override
     public void onBackPressed() {
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -87,13 +129,6 @@ public class Lista extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }*/
-
-    public void cadastrar(View view){
-
-        Intent it = new Intent(Lista.this, Cadastro.class);
-        startActivityForResult(it, 0);
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
