@@ -82,7 +82,7 @@ public class Aulas extends AppCompatActivity {
         editor5.putString(TEXT5, edt5.getText().toString());
         editor5.apply();
 
-        Toast.makeText(this, "Salvo!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.salvo, Toast.LENGTH_SHORT).show();
     }
 
     public void loadData(){
