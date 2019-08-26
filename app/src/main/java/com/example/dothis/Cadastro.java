@@ -152,8 +152,8 @@ public class Cadastro extends AppCompatActivity {
 
             dadosTarefas = new DadosTarefas(this);
             conexao = dadosTarefas.getWritableDatabase();
-            Snackbar.make(layout_cadastro, R.string.msg_conexao, Snackbar.LENGTH_SHORT)
-                    .setAction(R.string.msg_ok, null).show();
+            //Snackbar.make(layout_cadastro, R.string.msg_conexao, Snackbar.LENGTH_SHORT)
+              //      .setAction(R.string.msg_ok, null).show();
 
             tarefaRepositorio = new TarefaRepositorio(conexao);
 
