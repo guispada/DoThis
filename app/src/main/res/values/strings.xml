@@ -23,4 +23,6 @@
     <string name="sexta">Sexta-Feira</string>
     <string name="salvar">Salvar</string>
     <string name="salvo">Salvo!</string>
+    <string name="title_activity_aulas">Aulas</string>
+    <string name="title_activity_ajustes">Ajustes</string>
 </resources>

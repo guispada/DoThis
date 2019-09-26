@@ -115,7 +115,7 @@ public class Lista extends AppCompatActivity {
                 startActivityForResult(it, 0);
 
             case R.id.ajustes:
-                Intent itt = new Intent(Lista.this, Aulas.class);
+                Intent itt = new Intent(Lista.this, Ajustes.class);
                 startActivityForResult(itt, 0);
         }
 

@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ajustes"
-            android:label="@string/title_ajustes"/>
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Aulas"
-            android:label="@string/title_aulas"/>
+        <activity
+            android:name=".Ajustes"
+            android:label="@string/title_activity_ajustes"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Aulas"
+            android:label="@string/title_activity_aulas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Cadastro"
