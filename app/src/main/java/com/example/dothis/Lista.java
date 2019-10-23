@@ -91,46 +91,6 @@ public class Lista extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_lista, menu); //criando o menu lista
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        switch (id) {
-
-            case android.R.id.home:
-                finish();
-                break;
-
-            case R.id.aulas:
-                Intent it = new Intent(Lista.this, Aulas.class);
-                startActivityForResult(it, 0);
-
-            case R.id.ajustes:
-                Intent itt = new Intent(Lista.this, Ajustes.class);
-                startActivityForResult(itt, 0);
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    /*@Override
-    public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }*/
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         List<Tarefa> dados = tarefaRepositorio.buscarTodos();
