@@ -25,4 +25,6 @@
     <string name="salvo">Salvo!</string>
     <string name="title_activity_aulas">Aulas</string>
     <string name="title_activity_ajustes">Ajustes</string>
+    <string name="title_activity_info">Info</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

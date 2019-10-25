@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Info"
+            android:label="@string/title_activity_info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Aulas"
+            android:label="@string/title_activity_aulas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Cadastro"
             android:label="@string/title_cadastro"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -98,4 +98,28 @@ public class Lista extends AppCompatActivity {
         lst_tarefas.setAdapter(tarefaAdapter);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_lista, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.aulas:
+                Intent it = new Intent(Lista.this, Aulas.class);
+                startActivityForResult(it, 0);
+                return true;
+            case R.id.info:
+                Intent ti = new Intent(Lista.this, Info.class);
+                startActivityForResult(ti, 0);
+                return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
+
+    }
 }
