@@ -27,4 +27,8 @@
     <string name="title_activity_ajustes">Ajustes</string>
     <string name="title_activity_info">Info</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="selecione">Selecione</string>
+    <string name="horario_aviso">Escolha o horário dos avisos:</string>
+    <string name="horario_aviso2">*Os avisos serão notificados todos os dias neste horário</string>
+    <string name="developed_by">Developed by:</string>
 </resources>

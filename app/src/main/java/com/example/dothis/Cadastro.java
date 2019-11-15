@@ -5,12 +5,9 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -21,15 +18,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import com.example.dothis.database.DadosTarefas;
 import com.example.dothis.dominio.entidades.Tarefa;
 import com.example.dothis.dominio.repositorios.TarefaRepositorio;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 
-public class Cadastro extends AppCompatActivity {
+public class Cadastro extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private EditText edt_materia;
     private EditText edt_tarefa;
@@ -61,33 +58,24 @@ public class Cadastro extends AppCompatActivity {
         btn_entrega.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(Cadastro.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        setDate,
-                        year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
 
             }
         });
 
-        setDate = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                //Log.d(TAG, "onDateSet: Date: " + i + "/" + i1 + "/" + i2);
-                String date = day + "/" + month + "/" + year;
-                btn_entrega.setText(date);
-            }
-        };
-
         criarConexao();
         verificaParametro();
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int day) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, day);
+        String date = DateFormat.getDateInstance().format(c.getTime());
+        btn_entrega.setText(date);
     }
 
     private void verificaParametro(){

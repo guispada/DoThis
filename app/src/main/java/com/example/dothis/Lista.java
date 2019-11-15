@@ -69,8 +69,6 @@ public class Lista extends AppCompatActivity {
 
             dadosTarefas = new DadosTarefas(this);
             conexao = dadosTarefas.getWritableDatabase();
-            //Snackbar.make(layoutTarefas, R.string.msg_conexao, Snackbar.LENGTH_SHORT)
-              //      .setAction(R.string.msg_ok, null).show();
 
         }catch (SQLException ex){
 
